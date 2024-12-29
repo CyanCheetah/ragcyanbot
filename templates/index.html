@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CyanBot - AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="loading-bar"></div>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <button class="new-chat-btn" id="newChatBtn">
+                <i class="fas fa-plus"></i>
+                New Chat
+            </button>
+            
+            <div class="sidebar-tabs">
+                <button class="tab-button active" data-tab="chat">
+                    <i class="fas fa-comment"></i>
+                    Chat
+                </button>
+                <button class="tab-button" data-tab="upload">
+                    <i class="fas fa-upload"></i>
+                    Upload Documents
+                </button>
+                <button class="tab-button" data-tab="search">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+                <button class="tab-button" data-tab="graph">
+                    <i class="fas fa-project-diagram"></i>
+                    Knowledge Graph
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Chat Section -->
+            <div class="chat-section active" data-section="chat">
+                <div class="chat-container" id="chatHistory">
+                    <div class="message-list">
+                        <div class="message assistant">
+                            <div class="message-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                Hello! I'm CyanBot, your AI assistant. I can help you understand and work with your documents. Start by uploading some documents or ask me a question about the existing ones.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <div class="input-box">
+                        <input type="text" id="userInput" placeholder="Ask me anything...">
+                        <div class="action-buttons">
+                            <button class="action-button" id="uploadButton" title="Upload Document">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button class="action-button" id="sendButton" title="Send Message">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section" data-section="upload">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="file-input-wrapper">
+                        <button type="button" class="upload-button">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            Choose Files
+                        </button>
+                        <input type="file" id="fileInput" name="file" multiple>
+                    </div>
+                </form>
+                <div id="uploadStatus"></div>
+            </div>
+
+            <!-- Search Section -->
+            <div class="search-section" data-section="search">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search in documents...">
+                    <button class="action-button" id="searchButton">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+
+            <!-- Graph Section -->
+            <div class="graph-section" data-section="graph">
+                <button class="action-button" id="updateGraphBtn">
+                    <i class="fas fa-sync"></i>
+                    Update Graph
+                </button>
+                <div id="graph"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html> 

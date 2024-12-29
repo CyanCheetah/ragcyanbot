@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Chatbot API Status</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2563eb;
+            margin-top: 0;
+        }
+        .status {
+            padding: 10px;
+            background-color: #f0fdf4;
+            border: 1px solid #86efac;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .endpoints {
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #64748b;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RAG Chatbot API Status</h1>
+        <div class="status">
+            ✅ API Server is running
+        </div>
+        
+        <h2>Available Endpoints:</h2>
+        <div class="endpoints">
+            <p><strong>GET /ping</strong> - Check API status</p>
+            <p><strong>POST /chat</strong> - Send messages to the chatbot</p>
+        </div>
+
+        <h2>Frontend Application:</h2>
+        <p>The React frontend is available at: <code>http://localhost:3000</code></p>
+
+        <div class="note">
+            <p>Note: This is the API server. For the chat interface, please visit the React frontend at <a href="http://localhost:3000">http://localhost:3000</a></p>
+        </div>
+    </div>
+</body>
+</html> 
